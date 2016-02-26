@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block title %} Send file {% endblock %}
+{% block body %}
+    <br/><br/><br/>
+    <form action="/upload" method="POST" id="sign-up-form" class="form-horizontal"
+          enctype="multipart/form-data">
+
+        <div class="container">
+            <div class="col-xs-5">
+                <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" name="file">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-xs-3">
+                <input type="submit" class="btn  btn-primary btn-block" value="Confirm"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}

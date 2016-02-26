@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %} {{ title }} {% endblock %}
+{% block body %}
+    <div class="container">
+        <br><br><br><br>
+
+        <div class="starter-template">
+            {% for item in items %}
+                <h3>{{ item.Name }} </h3>
+                {% for attr in item.Attributes %}
+                    <h5> {{ attr.Name }} : {{ attr.Value }}</h5>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

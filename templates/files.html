@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block title %} Browse files {% endblock %}
+{% block body %}
+    <div class="container">
+        <form class="form-horizontal" method="post" role="form">
+            <fieldset>
+                <legend>Choose files:</legend>
+                <div class="form-group">
+                    {% for file in files %}
+                        <div class="checkbox">
+                            <label> <input type="checkbox" name="file" value="{{ file }}"/></label>
+                            <a href="/getfile/{{ file }}">{{ file }}</a>
+                            <br/>
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-submit" value="Process">Process</button>
+                    <button type="submit" formaction="/delete" class="btn btn-delete">Delete</button>
+
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
