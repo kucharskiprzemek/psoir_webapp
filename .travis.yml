@@ -3,3 +3,15 @@ python:
 - '2.7'
 - '3.3'
 - pypy
+before_install: pip install -r requirements.txt
+deploy:
+  provider: s3
+  access_key_id: AKIAJIM3K63WUZQVLQRA
+  secret_access_key:
+    secure: S7hDX0p4hVmt4lVah9UYRnGWssw7rW06OL6ObUQSZaa43xdXRImPRRipz6J2It6BjCxbh+u7XI3Q4KL5zQW7ZsGK/bsECtvp1W1Yujh8liV8A2ZmJrhnsWeF0WaJ6M4dNnZjDq+DAzmxWCfdt2iGQ9cxLc24x7mhsZqFFPfZGt9OI5ncae4s2P2PUTK8qhTIDqhsAYsNsF/p+5O4vxkgY30Fjjlplx7yu+zMJmi3CRnyfe9Z/lqgCPFM33Smzgc5haitpqkrLY+k0Np2Is3GajDXUC0jzRK0Z1uLykdaWbDMtMemw+ZxNPI0+a9kMO6hfrjD6ntC77V/MLYRrshMNeMZtuILGxwVahgkkh3+26rbILKoL7Oqi2r4a27vlMj4neEJALLMm9A+5U7wc/aThGvwsdpb3ynZSoPLosWjFjb6VfI5hnWXlN8jHJ7gBxNhmkHi1slXqaket/DB3Qa7V9vyF+sEW9GumervKjowuK2G+Mxh18J1yMxW6eh/5t8tjqi9AIqi1JxiGC7nj1A0qgdlgW8heYiLFVeO0PjRhcDBOnYUd4B71EgIHwH36DNBj3vza7v7TD/eZZTAwm2BC/mK4WOGH+wZ1Nr2R5KBBqXg2xJW9QcgVoERZ9yyEGPairdc+Uro/re27sBc1T1XsiAIEcXu9SjpAcsNyLEML9c=
+  bucket: pkucharski
+  upload-dir: webapp
+  acl: public_read
+  on:
+    repo: kucharskiprzemek/psoir_webapp
+script: nosetests
